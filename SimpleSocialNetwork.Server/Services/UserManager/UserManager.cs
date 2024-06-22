@@ -38,7 +38,7 @@ namespace SimpleSocialNetwork.Server.Services.UserManager
                 keySize);
             return hash;
         }
-        public async void AddUser(string userName, string password)
+        public async Task<User> AddUser(string userName, string password)
         {
             var hash = HashPassword(password, out var salt);
             var user = new User()
@@ -49,6 +49,7 @@ namespace SimpleSocialNetwork.Server.Services.UserManager
             };
             await _dbContext.Users.AddAsync(user);
             await _dbContext.SaveChangesAsync();
+            return user;
         }
     }
 }

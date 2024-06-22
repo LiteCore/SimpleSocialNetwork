@@ -6,8 +6,8 @@ namespace SimpleSocialNetwork.Server.Controllers
     [Route("/auth/{action}")]
     public class AuthController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-        public AuthController(ILogger<HomeController> logger)
+        private readonly ILogger<UserController> _logger;
+        public AuthController(ILogger<UserController> logger)
         {
             _logger = logger;
         }

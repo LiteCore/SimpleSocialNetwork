@@ -10,14 +10,7 @@ namespace SimpleSocialNetwork.Server.Services.DB
         [Required]
         public byte[] Content { get; set; } = null!;
         [Required]
-        public Type Type { get; set; }
-        [Required]
         public int PostId { get; set; }
         public Post Post { get; } = null!;
-    }
-    public enum Type
-    {
-        Png = 0,
-        Jpeg = 1
     }
 }
